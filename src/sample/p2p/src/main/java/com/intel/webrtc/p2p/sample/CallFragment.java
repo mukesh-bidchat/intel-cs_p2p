@@ -39,6 +39,8 @@ import org.webrtc.SurfaceViewRenderer;
 
 public class CallFragment extends Fragment implements View.OnClickListener {
 
+    private boolean isPublished = false;
+
     public interface CallFragmentListener {
         void onReady(SurfaceViewRenderer localRenderer, SurfaceViewRenderer remoteRenderer);
 
@@ -109,6 +111,7 @@ public class CallFragment extends Fragment implements View.OnClickListener {
         smallRenderer.setZOrderMediaOverlay(true);
 
         mListener.onReady(smallRenderer, fullRenderer);
+        togglePublish();
         return mView;
     }
 
@@ -124,6 +127,7 @@ public class CallFragment extends Fragment implements View.OnClickListener {
         fullRenderer = null;
         smallRenderer.release();
         smallRenderer = null;
+        isPublished = false;
         super.onDetach();
     }
 
@@ -143,6 +147,19 @@ public class CallFragment extends Fragment implements View.OnClickListener {
             case R.id.back_btn:
                 mListener.onUnpublishRequest(true);
                 break;
+        }
+    }
+
+    private void togglePublish(){
+        if (!isPublished) {
+            if (publishBtn.getText().toString().equals("Publish")) {
+                mListener.onPublishRequest();
+            } else {
+                mListener.onUnpublishRequest(false);
+                publishBtn.setText(R.string.publish);
+                publishBtn.setEnabled(true);
+            }
+            isPublished = true;
         }
     }
 

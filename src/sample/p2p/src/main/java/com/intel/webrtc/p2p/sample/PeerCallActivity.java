@@ -227,7 +227,13 @@ public class PeerCallActivity extends AppCompatActivity
             public void run() {
                 if (!inCalling)
                     loginFragment.onConnected();
+                else {
+                    if (p2PClient != null && peerId != null)
+                        p2PClient.onRenegotiationRequest(peerId);
+                }
                 LogAndToast.show(PeerCallActivity.this,getString(R.string.server_connected));
+
+
             }
         });
     }
@@ -240,6 +246,8 @@ public class PeerCallActivity extends AppCompatActivity
 //                switchFragment(loginFragment);
 //                callFragment = null;
 //                settingsFragment = null;
+//                if (inCalling)
+//                    onUnpublishRequest(false);
                 LogAndToast.show(PeerCallActivity.this,getString(R.string.server_disconnected));
             }
         });
@@ -363,7 +371,7 @@ public class PeerCallActivity extends AppCompatActivity
                     callFragment = new CallFragment();
                 }
                 switchFragment(callFragment);
-                sendMsg("call");
+
             }
         });
     }
@@ -421,11 +429,19 @@ public class PeerCallActivity extends AppCompatActivity
                                 getStats();
                             }
                         }, 0, STATS_INTERVAL_MS);
+
+                        LogAndToast.log("Publish success");
+
+                        sendMsg("call");
+
                     }
 
                     @Override
                     public void onFailure(IcsError error) {
                         callFragment.onPublished(false);
+                        LogAndToast.log("Publish error");
+
+                        sendMsg("call");
                     }
                 });
             }

@@ -93,17 +93,17 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
     private String getMyId(){
         if (peerNumber == 1){
-            return "peer1";
+            return "peer11";
         }else {
-            return "peer2";
+            return "peer22";
         }
     }
 
     private String getPeerId(){
         if (peerNumber == 1){
-            return "peer2";
+            return "peer22";
         }else {
-            return "peer1";
+            return "peer11";
         }
     }
 

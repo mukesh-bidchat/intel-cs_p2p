@@ -130,8 +130,9 @@ public class SocketSignalingChannel implements SignalingChannelInterface {
     private Listener onMessageCallback = new Listener() {
         @Override
         public void call(Object... arg0) {
-            LogAndToast.log("onMessageCallback");
             JSONObject argumentJsonObject = (JSONObject) arg0[0];
+            LogAndToast.log("onMessageCallback : "+argumentJsonObject.toString());
+
             for (SignalingChannelObserver observer : signalingChannelObservers) {
                 try {
                     observer.onMessage(argumentJsonObject.getString("from"),

@@ -8,4 +8,4 @@
 /captures
 .externalNativeBuild
 .idea
-
+src/sample/p2p/build/*
