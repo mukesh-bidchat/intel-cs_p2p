@@ -82,7 +82,7 @@ public class PeerCallActivity extends AppCompatActivity
 
     private static final String TAG = "ICS_P2P";
     private static final int ICS_REQUEST_CODE = 100;
-    private static final int STATS_INTERVAL_MS = 10000;
+    private static final int STATS_INTERVAL_MS = 20000;
     private static int failureCount = 0;
 
     private LoginFragment loginFragment;
@@ -227,6 +227,9 @@ public class PeerCallActivity extends AppCompatActivity
             public void run() {
                 if (!inCalling)
                     loginFragment.onConnected();
+                else
+                    if (remoteStreamEnded)
+                        p2PClient.onRenegotiationRequest(peerId);
                 LogAndToast.show(PeerCallActivity.this,getString(R.string.server_connected));
             }
         });
@@ -247,12 +250,14 @@ public class PeerCallActivity extends AppCompatActivity
 
     @Override
     public void onStreamAdded(final RemoteStream remoteStream) {
+        Log.e(TAG, "onStreamAdded: "+remoteStream.id());
         this.remoteStream = remoteStream;
         remoteStream.addObserver(new com.intel.webrtc.base.RemoteStream.StreamObserver() {
             @Override
             public void onStreamEnded() {
                 remoteStreamEnded = true;
                 remoteStream.detach(remoteRenderer);
+                p2PClient.onRenegotiationRequest(peerId);
             }
         });
         executor.execute(new Runnable() {
@@ -261,6 +266,9 @@ public class PeerCallActivity extends AppCompatActivity
                 if (remoteRenderer != null) {
                     remoteStream.attach(remoteRenderer);
                 }
+
+                if (remoteStreamEnded)
+                    onPublishRequest();
             }
         });
     }
