@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/p2p/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
+        "source": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/p2p/build/intermediates/exploded-aar/com.android.support/design/26.1.0/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/p2p/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
+        "source": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/p2p/build/intermediates/exploded-aar/com.android.support/design/26.1.0/res/drawable-anydpi-v21/design_ic_visibility.xml"
+    }
+]

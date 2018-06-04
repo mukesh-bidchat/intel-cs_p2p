@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/p2p/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/p2p/build/intermediates/exploded-aar/com.android.support/support-compat/26.1.0/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/p2p/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/p2p/build/intermediates/exploded-aar/com.android.support/support-compat/26.1.0/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/p2p/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/p2p/build/intermediates/exploded-aar/com.android.support/support-compat/26.1.0/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/p2p/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/p2p/build/intermediates/exploded-aar/com.android.support/support-compat/26.1.0/res/layout-v21/notification_action_tombstone.xml"
+    }
+]

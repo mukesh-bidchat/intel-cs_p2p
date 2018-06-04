@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/conference/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/conference/build/intermediates/exploded-aar/com.android.support/appcompat-v7/26.1.0/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/conference/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/conference/build/intermediates/exploded-aar/com.android.support/appcompat-v7/26.1.0/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "outputFile": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/p2p/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 66,
+                    "endOffset": 117
+                },
+                "from": {
+                    "file": "/Users/mukesh/Downloads/Intel_CS_WebRTC.v4.0/CS_WebRTC_Client_SDK_Android.v4.0/samples/src/sample/p2p/build/intermediates/exploded-aar/com.android.support/appcompat-v7/26.1.0/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 66,
+                        "endOffset": 117
+                    }
+                }
+            }
+        ]
+    }
+]
