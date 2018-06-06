@@ -1,0 +1,101 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.intel.webrtc.p2p.sample.CallFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <org.webrtc.SurfaceViewRenderer
+            android:id="@+id/small_renderer"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"/>
+
+        <org.webrtc.SurfaceViewRenderer
+            android:id="@+id/full_renderer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:id="@+id/call_end"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignBaseline="@+id/full_renderer"
+            android:layout_alignBottom="@+id/full_renderer"
+            android:layout_marginLeft="80dp"
+            android:layout_marginBottom="80dp"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:background="@color/colorPrimaryDark"
+            android:text="END"/>
+
+        <Button
+            android:id="@+id/call_restart"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignBaseline="@+id/full_renderer"
+            android:layout_alignBottom="@+id/full_renderer"
+            android:layout_alignRight="@+id/full_renderer"
+            android:layout_marginRight="80dp"
+            android:layout_marginBottom="80dp"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:background="@color/colorPrimaryDark"
+            android:text="START"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:text="me : "/>
+
+            <TextView
+                android:id="@+id/my_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:text=""/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:text="peer : "/>
+
+            <TextView
+                android:id="@+id/peer_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:text=""/>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

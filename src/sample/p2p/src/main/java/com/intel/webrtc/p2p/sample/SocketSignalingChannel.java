@@ -75,6 +75,7 @@ public class SocketSignalingChannel implements SignalingChannelInterface {
     private Listener onServerAuthenticatedCallback = new Listener() {
         @Override
         public void call(Object... arg0) {
+            Log.e(TAG, "onServerAuthenticatedCallback" );
             if (connectCallback != null) {
                 connectCallback.onSuccess(arg0[0].toString());
 //                connectCallback = null;
@@ -85,6 +86,7 @@ public class SocketSignalingChannel implements SignalingChannelInterface {
     private Listener onConnectFailedCallback = new Listener() {
         @Override
         public void call(Object... arg0) {
+            Log.e(TAG, "onConnectFailedCallback" );
             if (connectCallback != null) {
                 connectCallback.onFailure(
                         new IcsError(P2P_CONN_SERVER_UNKNOWN.value, "connect failed"));
@@ -95,6 +97,7 @@ public class SocketSignalingChannel implements SignalingChannelInterface {
     private Listener onForceDisconnectCallback = new Listener() {
         @Override
         public void call(Object... arg0) {
+            Log.e(TAG, "onForceDisconnectCallback" );
             if (socketIOClient != null) {
                 socketIOClient.io().reconnection(false);
             }
@@ -104,6 +107,7 @@ public class SocketSignalingChannel implements SignalingChannelInterface {
     private Listener onDisconnectCallback = new Listener() {
         @Override
         public void call(Object... arg0) {
+            Log.e(TAG, "onDisconnectCallback" );
             for (SignalingChannelObserver observer : signalingChannelObservers) {
                 observer.onServerDisconnected();
             }
@@ -114,6 +118,7 @@ public class SocketSignalingChannel implements SignalingChannelInterface {
 
         @Override
         public void call(Object... arg0) {
+            Log.e(TAG, "onServerErrorCallback ");
             if (connectCallback != null) {
                 Pattern pattern = Pattern.compile("[0-9]*");
                 if (pattern.matcher(arg0[0].toString()).matches()) {
@@ -130,13 +135,13 @@ public class SocketSignalingChannel implements SignalingChannelInterface {
     private Listener onMessageCallback = new Listener() {
         @Override
         public void call(Object... arg0) {
+            Log.e(TAG, "onMessageCallback: ");
             JSONObject argumentJsonObject = (JSONObject) arg0[0];
-            LogAndToast.log("onMessageCallback : "+argumentJsonObject);
             for (SignalingChannelObserver observer : signalingChannelObservers) {
                 try {
                     observer.onMessage(argumentJsonObject.getString("from"),
                                        argumentJsonObject.getString("data"));
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -250,6 +255,7 @@ public class SocketSignalingChannel implements SignalingChannelInterface {
         public void call(Object... arg0) {
 //            JSONObject argumentJsonObject = (JSONObject) arg0[0];
 //            LogAndToast.log("onServerReconnecting : ");
+            Log.e(TAG, "onServerReconnecting " );
         }
     };
 

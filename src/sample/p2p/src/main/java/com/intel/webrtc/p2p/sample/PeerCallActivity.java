@@ -255,9 +255,13 @@ public class PeerCallActivity extends AppCompatActivity
         remoteStream.addObserver(new com.intel.webrtc.base.RemoteStream.StreamObserver() {
             @Override
             public void onStreamEnded() {
-                remoteStreamEnded = true;
-                remoteStream.detach(remoteRenderer);
-                p2PClient.onRenegotiationRequest(peerId);
+                try{
+                    remoteStreamEnded = true;
+                    remoteStream.detach(remoteRenderer);
+                    p2PClient.onRenegotiationRequest(peerId);
+                }catch (Exception e){
+                    Log.e(TAG, "onStreamEnded: "+e.getMessage());
+                }
             }
         });
         executor.execute(new Runnable() {

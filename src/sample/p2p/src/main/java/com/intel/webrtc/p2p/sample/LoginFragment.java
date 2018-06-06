@@ -57,7 +57,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     private EditText serverText, myIdText, peerIdText;
     private TextView errorTV;
     private LinearLayout peerContainer;
-    private int peerNumber = 2;
+    private int peerNumber = 1;
 
     private LoginFragmentListener mListener;
     private boolean loggedIn = false;
