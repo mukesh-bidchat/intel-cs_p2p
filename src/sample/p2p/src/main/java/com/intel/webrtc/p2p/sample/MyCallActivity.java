@@ -70,12 +70,13 @@ public class MyCallActivity extends AppCompatActivity implements P2PClient.P2PCl
     private SurfaceViewRenderer fullRenderer, smallRenderer;
     private boolean isButtonRegistered = false;
     private boolean isRemoteStreamEnded = true;
+    private boolean shouldReconnect = false;
     private boolean isCaller = false;
     private boolean isCallee = false;
 
-    private int peerNumber = 1;
+    private int peerNumber = 2;
     private int PING_INTERVAL_MS = 2000;
-    private int STREAM_INTERVAL_MS = 5000;
+    private int STREAM_INTERVAL_MS = 2000;
 
 
     @Override
@@ -152,6 +153,11 @@ public class MyCallActivity extends AppCompatActivity implements P2PClient.P2PCl
                     public void onSuccess(String result) {
                         Log.e(TAG, "p2PClient.connect : onSuccess");
                         requestPermission();
+
+                        if (shouldReconnect){
+                            startRemoteStreamTimer();
+                            shouldReconnect = false;
+                        }
                     }
 
                     @Override
@@ -316,6 +322,12 @@ public class MyCallActivity extends AppCompatActivity implements P2PClient.P2PCl
             @Override
             public void run() {
                 Log.e(TAG, "onServerDisconnected" );
+                if (remoteStreamTimer != null){
+                    shouldReconnect = true;
+                    remoteStreamTimer.cancel();
+                    remoteStreamTimer = null;
+                }
+
             }
         });
     }
@@ -348,7 +360,13 @@ public class MyCallActivity extends AppCompatActivity implements P2PClient.P2PCl
             @Override
             public void run() {
                 if (fullRenderer != null) {
-                    remoteStream.attach(fullRenderer);
+                    try {
+                        remoteStream.attach(fullRenderer);
+                    }catch (Exception e){
+                        Log.e(TAG, "remote stream attaching to rendered failed : "+e.getMessage());
+                        startRemoteStreamTimer();
+                    }
+
                 }
             }
         });

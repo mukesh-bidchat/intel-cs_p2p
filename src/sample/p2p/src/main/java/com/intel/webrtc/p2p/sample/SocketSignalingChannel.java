@@ -186,6 +186,8 @@ public class SocketSignalingChannel implements SignalingChannelInterface {
             IO.Options opt = new IO.Options();
             opt.forceNew = true;
             opt.reconnection = true;
+            opt.reconnectionDelay = 1000;
+            opt.reconnectionDelayMax = 2000;
             if (socketIOClient != null) {
                 Log.d(TAG, "stop reconnecting the former url");
                 socketIOClient.disconnect();
